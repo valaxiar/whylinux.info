@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Use Linux?</title>
+</head>
+<body>
+    <h1>
+        Why to install Linux on <span id="currentDate"></span>
+    </h1>
+    
+    <script>
+        const now = new Date();
+        const options = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
+        const date = now.toLocaleDateString('en-US', options).replace(',', '').replace(/\b\w/g, letter => letter.toLowerCase());
+
+        document.getElementById("currentDate").innerText = date;
+    </script>
+
+    <script type="text/javascript">
+        var year = new Date();
+        document.write(year.getFullYear());
+    </script>
+
+    <div>
+        <img src="/torvalds.jpg" alt="penguin man">
+    </div>
+
+    <ol>
+        <li>windows 11 is basically spyware😨</li>
+        <li>most distros are free🤑</li>
+        <li>tux is a really cool mascot🐧💯</li>
+        <li>actual customization🎨</li>
+        <li>you get to learn how to use the command line 💻</li>
+        <li>neofetch🤩</li>
+    </ol>
+</body>
+</html>
