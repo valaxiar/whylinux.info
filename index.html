@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>i use arch btw</title>
@@ -9,16 +10,6 @@
     <h1>
         Why to install Linux on <span id="currentDate"></span>
     </h1>
-    
-    <script>
-        const now = new Date();
-        const options = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
-        const date = now.toLocaleDateString('en-US', options).replace(',', '').replace(/\b\w/g, letter => letter.toLowerCase());
-
-        document.getElementById("currentDate").innerText = date;
-    </script>
-
-    
 
     <div>
         <img src="/torvalds.jpg" alt="penguin man">
@@ -26,15 +17,23 @@
 
     <ol>
         <li>windows 11 is basically spyware😨</li>
-        <li>macs are expensive🍎<li>
+        <li>macs are expensive🍎</li>
         <li>most distros are free🤑</li>
         <li>tux is a really cool mascot🐧💯</li>
         <li>actual customization🎨</li>
         <li>you get to learn how to use the command line🧑‍💻</li>
         <li>linux runs fast even on old hardware💻</li>
-         <li>no reason to touch grass when you're editing config files all day😃</li>
+        <li>no reason to touch grass when you're editing config files all day😃</li>
         <li>neofetch🤩</li>
     </ol>
     <p> made by Valaxiar</p>
+
+    <script>
+        const now = new Date();
+        const options = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
+        const date = now.toLocaleDateString('en-US', options).replace(',', '').replace(/\b\w/g, letter => letter.toLowerCase());
+
+        document.getElementById("currentDate").innerText = date;
+    </script>
 </body>
 </html>
