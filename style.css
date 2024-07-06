@@ -43,3 +43,12 @@ p {
     font-size: 1em;
     color: #03dac5;
 }
+
+p a {
+    color: inherit;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: bold;
+}
