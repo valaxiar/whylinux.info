@@ -50,5 +50,5 @@ p a {
 }
 
 p a:hover {
-    text-decoration: bold;
+    text-decoration: underline;
 }
