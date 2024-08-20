@@ -4,21 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CBL Calculator</title>
-    <style>
-        body { font-family: Arial, sans-serif; }
-        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-        .section { margin-bottom: 20px; }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <h1>CBL Grading Calculator</h1>
 
         <div class="section">
-            <h2>Add New Outcome</h2>
+            <h2><i class="fas fa-plus-circle"></i> Add New Outcome</h2>
             <label for="outcomeName">Outcome name:</label>
             <input type="text" id="outcomeName" placeholder="Enter outcome name">
-            <button onclick="addOutcome()">Add Outcome</button>
+            <button onclick="addOutcome()"><i class="fas fa-plus"></i> Add Outcome</button>
         </div>
 
         <div id="outcomeList" class="section">
@@ -26,14 +23,13 @@
         </div>
 
         <div class="section">
-            <h2>Calculate Final Grade</h2>
-            <button onclick="calculateFinalGrade()">Calculate final grade</button>
-            <button onclick="clearAllOutcomes()">Clear everything</button>
+            <h2><i class="fas fa-calculator"></i> Calculate Final Grade</h2>
+            <button onclick="calculateFinalGrade()"><i class="fas fa-equals"></i> Calculate Final Grade</button>
+            <button class="clear-remove" onclick="clearAllOutcomes()"><i class="fas fa-trash-alt"></i> Clear Everything</button>
             <div id="finalGrade"></div>
         </div>
     </div>
 
     <script src="calculator.js"></script>
 </body>
-    <p>womp womp no css :(</p>
 </html>
