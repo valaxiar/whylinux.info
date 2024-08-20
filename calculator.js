@@ -27,22 +27,32 @@ class Outcome {
 
     renderGrades() {
         const outcomeElement = document.getElementById(this.name);
-        outcomeElement.innerHTML = `
-            <h3>${this.name}</h3>
-            <ul>
-                ${this.grades.map(grade => `<li>${grade}</li>`).join('')}
-            </ul>
-            <button onclick="removeGrade('${this.name}')">Remove Last Grade</button>
-            <button onclick="addGrade('${this.name}')">Add Grade</button>
-            <button onclick="removeOutcome('${this.name}')">Remove Outcome</button>
-        `;
+        if (outcomeElement) {
+            outcomeElement.innerHTML = `
+                <h3>${this.name}</h3>
+                <ul>
+                    ${this.grades.map(grade => `<li>${grade}</li>`).join('')}
+                </ul>
+                <div class="button-group">
+                    <button class="icon-button" onclick="removeGrade('${this.name}')">
+                        &#128465; Remove Last Grade
+                    </button>
+                    <button class="icon-button" onclick="addGrade('${this.name}')">
+                        &#43; Add Grade
+                    </button>
+                    <button class="clear-remove" onclick="removeOutcome('${this.name}')">
+                        &#10060; Remove Outcome
+                    </button>
+                </div>
+            `;
+        }
     }
 }
 
 const outcomes = [];
 
 function addOutcome() {
-    const name = document.getElementById('outcomeName').value;
+    const name = document.getElementById('outcomeName').value.trim();
     if (name && !outcomes.some(outcome => outcome.name === name)) {
         const outcome = new Outcome(name);
         outcomes.push(outcome);
@@ -55,14 +65,24 @@ function addOutcome() {
 
 function renderOutcomeList() {
     const outcomeList = document.getElementById('outcomeList');
-    outcomeList.innerHTML = outcomes.map(outcome => `
-        <div id="${outcome.name}" class="section">
-            <h3>${outcome.name}</h3>
-            <button onclick="addGrade('${outcome.name}')">Add grade to this outcome</button>
-            <button onclick="removeGrade('${outcome.name}')">Remove last Grade</button>
-            <button onclick="removeOutcome('${outcome.name}')">Remove entire outcome</button>
-        </div>
-    `).join('');
+    if (outcomeList) {
+        outcomeList.innerHTML = outcomes.map(outcome => `
+            <div id="${outcome.name}" class="section">
+                <h3>${outcome.name}</h3>
+                <div class="button-group">
+                    <button class="icon-button" onclick="addGrade('${outcome.name}')">
+                        &#43; Add Grade
+                    </button>
+                    <button class="icon-button" onclick="removeGrade('${outcome.name}')">
+                        &#128465; Remove Last Grade
+                    </button>
+                    <button class="clear-remove" onclick="removeOutcome('${outcome.name}')">
+                        &#10060; Remove Entire Outcome
+                    </button>
+                </div>
+            </div>
+        `).join('');
+    }
 }
 
 function addGrade(outcomeName) {
@@ -116,7 +136,7 @@ function calculateFinalGrade() {
 }
 
 function clearAllOutcomes() {
-    outcomes.length = 0; // or outcomes.splice(0, outcomes.length);
+    outcomes.length = 0; // Clear the outcomes array
     renderOutcomeList();
     document.getElementById('finalGrade').innerText = '';
 }
