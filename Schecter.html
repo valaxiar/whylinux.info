@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schecter.xyz</title>
+    <style>
+        /* Resetting margins and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 30px;
+            background: #ff69b4; /* Hot pink background */
+            overflow: hidden;
+            color: white;
+        }
+
+        /* Dynamic background effect */
+        .background {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            background: radial-gradient(circle, #ff69b4 10%, transparent 10%) 0 0,
+                        radial-gradient(circle, #ff69b4 10%, transparent 10%) 5px 5px;
+            background-size: 10px 10px;
+            z-index: 0;
+            animation: moveBackground 20s linear infinite;
+        }
+
+        @keyframes moveBackground {
+            0% {
+                background-position: 0 0, 5px 5px;
+            }
+            100% {
+                background-position: 5px 5px, 0 0;
+            }
+        }
+
+        /* Box styling */
+        #box {
+            border-radius: 25px;
+            border: 10px solid #ff1493; /* Deep pink border */
+            background: #ff85c0; /* Lighter pink background */
+            padding: 20px;
+            width: 80%;
+            max-width: 500px;
+            margin: 30px auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Definition box styling */
+        #defBox {
+            border-radius: 25px;
+            border: 4px solid #ff1493; /* Deep pink border */
+            background: #ffb6c1; /* Light pink background */
+            padding: 20px;
+            width: 80%;
+            max-width: 500px;
+            margin: 20px auto;
+            text-align: left;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Image styling */
+        img {
+            display: block;
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            border: 10px solid #ff1493; /* Deep pink border */
+            border-radius: 15px;
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background"></div>
+
+    <div id="box">
+        <h1>Schecter.xyz</h1>
+    </div>
+
+    <div id="defBox">
+        <p><strong>Schecter</strong></p>
+        <p><em>(noun)</em></p>
+        <p>A ritualistic slaughterer</p>
+        <p>(see also: <strong><a href="https://en.wikipedia.org/wiki/Jews">jewishism</strong>)</p>
+    </div>
+
+    <img src="https://cataas.com/cat" alt="A cat">
+
+</body>
+</html>
